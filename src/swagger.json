@@ -1,0 +1,53 @@
+{
+  "openapi": "3.0.0",
+  "info":{
+    "title": "app-name-api",
+    "description": "",
+    "version": "1.0.0",
+    "contact":{
+    "email": "dev-email"
+    }
+  },
+  "paths":{
+    "/user":{
+      "post": {
+        "tags": ["User"],
+        "summary":"Create a User",
+        "description":"Create a new User",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description": "Created"
+          },
+          "500":{
+            "description": "User Already exists."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User":{
+      "type": "object",
+      "properties":{
+        "nome":{
+          "type": "string"
+        },
+        "email":{
+          "type": "string"
+        }, 
+        "senha":{
+          "type": "string"
+        }
+      }
+    } 
+  }
+}

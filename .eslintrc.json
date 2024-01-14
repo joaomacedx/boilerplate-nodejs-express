@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "plugin:vitest-globals/recommended",
+    "standard",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-useless-constructor": "off",
+    "@typescript-eslint/adjacent-overload-signatures": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "always",
+        "semi": false
+      }
+    ]
+  },
+  "env": {
+    "es2021": true,
+    "node": true,
+    "vitest-globals/env": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
+    }
+  }
+}
