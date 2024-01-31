@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import { verify } from 'jsonwebtoken'
 import { AppError } from '../../../errors'
 import { inMemoryUserRepository } from '../../../../modules/users/application/use-cases'
+import { environment } from '@shared/infra/environment'
 
 interface IPayload {
   sub: string
@@ -17,7 +18,7 @@ export async function ensureAuthenticated(
   try {
     const { sub: userID } = verify(
       token,
-      'f8886815eb3423fce958930c5cb76204',
+      environment.tokenInfo.token,
     ) as IPayload
     const user = inMemoryUserRepository.findById(userID)
     if (!user) throw new AppError('User does not exists!', 401)
