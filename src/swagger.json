@@ -32,22 +32,57 @@
           }
         }
       }
+    },
+    "/sessions":{
+      "post": {
+        "tags": ["Auth"],
+        "summary":"Authenticate an user",
+        "description":"Login",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "$ref": "#/definitions/UserLogin"
+              }
+            }
+          }
+        },
+        "responses":{
+          "200":{
+            "description": "Authenticated user"
+          },
+          "400":{
+            "description": "Email or password incorrect!"
+          }
+        }
+      }
     }
   },
   "definitions": {
     "User":{
       "type": "object",
       "properties":{
-        "nome":{
+        "name":{
           "type": "string"
         },
         "email":{
           "type": "string"
         }, 
-        "senha":{
+        "password":{
           "type": "string"
         }
       }
-    } 
+    },
+    "UserLogin":{
+      "type": "object",
+      "properties":{
+        "email":{
+          "type": "string"
+        }, 
+        "password":{
+          "type": "string"
+        }
+      }
+    }
   }
 }

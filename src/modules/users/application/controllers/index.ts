@@ -1,3 +1,2 @@
-import { CreateUserController } from './create-user.controller'
-
-export const createUserController = new CreateUserController()
+export * from './create-user.controller'
+export * from './authenticate-user.controller'

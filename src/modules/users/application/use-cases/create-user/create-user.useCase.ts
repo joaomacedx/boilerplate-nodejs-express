@@ -1,7 +1,7 @@
 import { EntityId } from '@core/entities/entity-id'
 import { User } from '@modules/users/enterprise/entities/user'
 import { UserRepository } from '@modules/users/enterprise/repositories/user-repository'
-import { AppError } from '@errors/app-error'
+import { AppError } from '@shared/errors/app-error'
 
 export interface CreateUserUseCaseRequest {
   name: string

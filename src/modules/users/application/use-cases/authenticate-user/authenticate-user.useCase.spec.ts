@@ -1,6 +1,6 @@
 import { expect, beforeEach, describe, it } from 'vitest'
 import { InMemoryUserRepository } from '../../repositories/in-memory-user-repository'
-import { CreateUserUseCase } from './create-user.useCase'
+import { CreateUserUseCase } from '../create-user'
 import { AppError } from '@shared/errors/app-error'
 
 let inMemoryUserRepository: InMemoryUserRepository
